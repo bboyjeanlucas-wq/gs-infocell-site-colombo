@@ -549,17 +549,25 @@ export default function Home() {
                 title: "Endereço",
                 content: "R. Gustavo Kabitschke, 267 - Loja 3",
                 subtext: "Rio Verde, Colombo - PR, 83405-000",
+                link: "https://maps.google.com/?q=R.+Gustavo+Kabitschke,+267+-+Loja+3,+Rio+Verde,+Colombo,+PR,+83405-000",
               },
               {
                 icon: Clock,
                 title: "Horário de Funcionamento",
                 content: "Seg - Sex: 9h às 12h e 14h às 18h",
                 subtext: "Sábados: 9h às 14h",
+                link: null,
               },
             ].map((info, index) => (
-              <div
+              <a
                 key={index}
-                className="p-6 md:p-8 rounded-lg bg-white border-2 border-gray-200 hover:border-[#25D366] hover:shadow-lg transition-all duration-300"
+                href={info.link || "#"}
+                target={info.link ? "_blank" : "_self"}
+                rel={info.link ? "noopener noreferrer" : ""}
+                onClick={(e) => !info.link && e.preventDefault()}
+                className={`p-6 md:p-8 rounded-lg bg-white border-2 border-gray-200 hover:border-[#25D366] hover:shadow-lg transition-all duration-300 block ${
+                  info.link ? "cursor-pointer" : ""
+                }`}
               >
                 <div className="flex items-start gap-4">
                   <info.icon
@@ -574,9 +582,14 @@ export default function Home() {
                       {info.content}
                     </p>
                     <p className="text-sm text-gray-600">{info.subtext}</p>
+                    {info.link && (
+                      <p className="text-xs text-[#25D366] font-semibold mt-3 flex items-center gap-1">
+                        📍 Abrir no Google Maps
+                      </p>
+                    )}
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
