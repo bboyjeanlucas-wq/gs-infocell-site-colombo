@@ -510,7 +510,7 @@ export default function Home() {
                 size="lg"
                 className="w-full bg-[#25D366] hover:bg-[#1fa857] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-base md:text-lg"
               >
-                Enviar Solicitação
+                ENVIAR
               </Button>
 
               <p className="text-center text-xs md:text-sm text-gray-600">
