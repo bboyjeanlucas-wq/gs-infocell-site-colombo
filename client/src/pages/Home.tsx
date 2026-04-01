@@ -12,11 +12,13 @@ import {
   Battery,
   Wrench,
   AlertCircle,
+  MapPin,
+  Clock,
 } from "lucide-react";
 import { useState } from "react";
 
 /**
- * GS INFOCELL Landing Page - Versão CRO Otimizada
+ * GS INFOCELL Landing Page - Versão CRO Otimizada com Dados Reais
  * Design: Apple Minimalism + Premium Tech Aesthetic + Conversão Brasileira
  * Color Palette: Navy Blue (#001F3F), White (#FFFFFF), WhatsApp Green (#25D366)
  * Focus: Urgência, Confiança, Escaneabilidade, Mobile-First
@@ -47,7 +49,7 @@ export default function Home() {
   };
 
   const whatsappLink =
-    "https://wa.me/5511999999999?text=Olá%20GS%20INFOCELL!%20Gostaria%20de%20um%20orçamento%20para%20reparar%20meu%20celular.";
+    "https://wa.me/554136212675?text=Olá%20GS%20INFOCELL!%20Gostaria%20de%20um%20orçamento%20para%20reparar%20meu%20celular.";
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -59,7 +61,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4 md:space-y-6 order-2 lg:order-1">
               <div className="space-y-3 md:space-y-4">
                 <h1 className="text-3xl md:text-5xl font-bold text-[#001F3F] leading-tight">
-                  Assistência Técnica Celular Apple Especializada
+                  Seu Smartphone Merece Cuidado de Verdade
                 </h1>
 
                 {/* Trust Trigger - Avaliações */}
@@ -82,10 +84,10 @@ export default function Home() {
                 </div>
 
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                  Seu iPhone ou Android quebrou? Na GS INFOCELL, somos
-                  especialistas em reparo de celulares, garantindo que seu
-                  aparelho volte a funcionar perfeitamente com agilidade e
-                  total confiança.
+                  Somos especialistas em recuperação de Android e iOS com
+                  substituição avançada de componentes. Aqui, o serviço é
+                  transparente, seguro e pensado para resolver seu problema no
+                  menor tempo possível.
                 </p>
               </div>
 
@@ -123,10 +125,11 @@ export default function Home() {
               {/* Trust Trigger - Velocidade */}
               <div className="bg-gradient-to-r from-[#25D366]/10 to-[#001F3F]/10 p-3 rounded-lg border border-[#25D366]/20">
                 <p className="text-sm font-semibold text-[#001F3F]">
-                  ⚡ Reparos rápidos em até 60 minutos
+                  ⚡ Reparos rápidos e eficientes
                 </p>
                 <p className="text-xs text-gray-600">
-                  Para modelos selecionados
+                  Fale já conosco via WhatsApp e resolva tudo de forma prática
+                  e segura!
                 </p>
               </div>
             </div>
@@ -165,8 +168,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problem Section - Otimizado para Escaneabilidade */}
+      {/* Services Section */}
       <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F] mb-3">
+              Veja Como Podemos Ajudar
+            </h2>
+            <p className="text-base md:text-lg text-gray-600">
+              Serviços especializados para Android e iOS
+            </p>
+          </div>
+
+          {/* Service Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {[
+              {
+                title: "Celulares Android",
+                services: [
+                  "Substituição de Tela",
+                  "Substituição de Bateria",
+                  "Substituição de Componentes",
+                ],
+              },
+              {
+                title: "Celulares iOS",
+                services: [
+                  "Substituição de Tela",
+                  "Substituição de Bateria",
+                  "Substituição de Componentes",
+                ],
+              },
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="p-6 md:p-8 rounded-lg bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 hover:border-[#25D366] hover:shadow-lg transition-all duration-300"
+              >
+                <h3 className="text-2xl font-bold text-[#001F3F] mb-4">
+                  {service.title}
+                </h3>
+                <ul className="space-y-3">
+                  {service.services.map((item, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <CheckCircle2
+                        size={20}
+                        className="text-[#25D366] flex-shrink-0"
+                      />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#1fa857] text-white font-semibold rounded-lg transition-all duration-300 text-sm"
+                >
+                  Entrar em Contato
+                  <ArrowRight size={16} />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section - Otimizado para Escaneabilidade */}
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F] mb-3">
@@ -246,73 +314,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Solution Section */}
+      {/* Diferenciais Section */}
       <section className="py-12 md:py-16 bg-gradient-to-br from-[#001F3F] to-[#0a3a5c] text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Image */}
-            <div className="flex justify-center order-2 lg:order-1">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031400192/j3cbDH25f6DrJBnEGfKSrG/workshop-professional-a2eeD4QVEMxDEDpHEMyLrC.webp"
-                alt="Oficina profissional da GS INFOCELL"
-                className="w-full max-w-md rounded-lg shadow-2xl object-cover"
-              />
-            </div>
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+              Veja o Que Nos Diferencia da Concorrência
+            </h2>
+            <p className="text-base md:text-lg text-gray-100">
+              Qualidade, confiança e transparência em cada serviço
+            </p>
+          </div>
 
-            {/* Content */}
-            <div className="order-1 lg:order-2 space-y-6 md:space-y-8">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Por Que Escolher a GS INFOCELL?
-                </h2>
-                <p className="text-base md:text-lg text-gray-100 leading-relaxed">
-                  Somos a sua assistência técnica celular de confiança, com foco
-                  total na qualidade e na sua satisfação.
-                </p>
+          {/* Diferenciais Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {[
+              {
+                icon: "🎬",
+                title: "Película Nova na Tela",
+                description:
+                  "Na substituição da tela, você ganha uma película nova incluída",
+              },
+              {
+                icon: "💰",
+                title: "Preço Justo",
+                description:
+                  "Preço alinhado com qualidade e responsabilidade",
+              },
+              {
+                icon: "⭐",
+                title: "Peças de Qualidade",
+                description:
+                  "Produtos e peças com a melhor qualidade do mercado",
+              },
+              {
+                icon: "🛡️",
+                title: "Garantia Total",
+                description: "Garantia em todos os serviços realizados",
+              },
+            ].map((diferencial, index) => (
+              <div
+                key={index}
+                className="p-6 md:p-8 rounded-lg bg-white/10 backdrop-blur border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">{diferencial.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{diferencial.title}</h3>
+                <p className="text-gray-200">{diferencial.description}</p>
               </div>
-
-              {/* Solution Features */}
-              <div className="space-y-4">
-                {[
-                  {
-                    icon: Shield,
-                    title: "Especialistas em Reparo",
-                    description:
-                      "Equipe qualificada para todas as marcas e modelos, incluindo Apple.",
-                  },
-                  {
-                    icon: Zap,
-                    title: "Agilidade e Eficiência",
-                    description:
-                      "Diagnósticos precisos e reparos rápidos para você não ficar sem seu aparelho.",
-                  },
-                  {
-                    icon: CheckCircle2,
-                    title: "Peças de Qualidade",
-                    description:
-                      "Apenas componentes de alta qualidade que garantem durabilidade.",
-                  },
-                  {
-                    icon: Phone,
-                    title: "Transparência Total",
-                    description:
-                      "Orçamentos claros e sem surpresas. Você acompanha tudo.",
-                  },
-                ].map((feature, index) => (
-                  <div key={index} className="flex gap-4 items-start">
-                    <feature.icon className="w-6 h-6 text-[#25D366] flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-bold text-base md:text-lg mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-sm md:text-base text-gray-200">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -373,42 +422,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Repaired Phone Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Content */}
-            <div className="space-y-4 md:space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F]">
-                Seu Celular Funcionando Perfeitamente
-              </h2>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                Após o reparo na GS INFOCELL, seu aparelho volta a funcionar
-                como novo, com garantia de qualidade e satisfação total.
-              </p>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#1fa857] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-              >
-                💬 Solicitar Orçamento Agora
-                <ArrowRight size={18} />
-              </a>
-            </div>
-
-            {/* Image */}
-            <div className="flex justify-center">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031400192/j3cbDH25f6DrJBnEGfKSrG/phone-repaired-BthZ9CqkdTx5MSL5SHtpF2.webp"
-                alt="Smartphone reparado e funcionando perfeitamente"
-                className="w-full max-w-md rounded-lg shadow-2xl object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form Section */}
       <section
         id="contact-form"
@@ -455,7 +468,7 @@ export default function Home() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="(11) 99999-9999"
+                    placeholder="(41) 3621-2675"
                     className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#25D366] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-opacity-20 transition-all text-sm md:text-base"
                     required
                   />
@@ -508,10 +521,88 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="text-[#25D366] font-semibold hover:underline"
                 >
-                  💬 (11) 99999-9999
+                  💬 (41) 3621-2675
                 </a>
               </p>
             </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Store Info Section */}
+      <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F] mb-3">
+              Visite Nossa Loja!
+            </h2>
+            <p className="text-base md:text-lg text-gray-600">
+              Estamos localizados em Rio Verde, Colombo - PR
+            </p>
+          </div>
+
+          {/* Store Info Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {[
+              {
+                icon: MapPin,
+                title: "Endereço",
+                content: "R. Gustavo Kabitschke, 267 - Loja 3",
+                subtext: "Rio Verde, Colombo - PR, 83405-000",
+              },
+              {
+                icon: Clock,
+                title: "Horário de Funcionamento",
+                content: "Seg - Sex: 9h às 12h e 14h às 18h",
+                subtext: "Sábados: 9h às 14h",
+              },
+            ].map((info, index) => (
+              <div
+                key={index}
+                className="p-6 md:p-8 rounded-lg bg-white border-2 border-gray-200 hover:border-[#25D366] hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <info.icon
+                    size={32}
+                    className="text-[#25D366] flex-shrink-0"
+                  />
+                  <div>
+                    <h3 className="text-xl font-bold text-[#001F3F] mb-2">
+                      {info.title}
+                    </h3>
+                    <p className="text-gray-700 font-semibold mb-1">
+                      {info.content}
+                    </p>
+                    <p className="text-sm text-gray-600">{info.subtext}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Social Links */}
+          <div className="text-center mt-8 md:mt-12">
+            <h3 className="text-xl font-bold text-[#001F3F] mb-4">
+              Redes Sociais
+            </h3>
+            <div className="flex justify-center gap-4 md:gap-6">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#1fa857] text-white font-semibold rounded-lg transition-all duration-300"
+              >
+                💬 WhatsApp
+              </a>
+              <a
+                href="https://instagram.com/gsinfocell"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#E4405F] hover:bg-[#d03860] text-white font-semibold rounded-lg transition-all duration-300"
+              >
+                📷 Instagram
+              </a>
+            </div>
           </div>
         </div>
       </section>
