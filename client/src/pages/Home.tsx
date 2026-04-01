@@ -87,7 +87,7 @@ export default function Home() {
             {/* Hero Image */}
             <div className="order-1 lg:order-2 flex justify-center">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031400192/j3cbDH25f6DrJBnEGfKSrG/hero-technician-cMcpyTqRxdEah2VPbfuFt9.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031400192/j3cbDH25f6DrJBnEGfKSrG/hero-image-custom_d85b6767.jpg"
                 alt="Técnico especializado consertando iPhone"
                 className="w-full max-w-md rounded-lg shadow-2xl object-cover"
               />
